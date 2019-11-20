@@ -1,0 +1,123 @@
+D:\OpenTK\openTK3D\openTK3D\bin\Debug\openTK3D.exe.config
+D:\OpenTK\openTK3D\openTK3D\bin\Debug\openTK3D.exe
+D:\OpenTK\openTK3D\openTK3D\bin\Debug\openTK3D.pdb
+D:\OpenTK\openTK3D\openTK3D\bin\Debug\OpenTK.dll
+D:\OpenTK\openTK3D\openTK3D\bin\Debug\OpenTK.GLControl.dll
+D:\OpenTK\openTK3D\openTK3D\bin\Debug\OpenTK.pdb
+D:\OpenTK\openTK3D\openTK3D\bin\Debug\OpenTK.xml
+D:\OpenTK\openTK3D\openTK3D\bin\Debug\OpenTK.GLControl.xml
+D:\OpenTK\openTK3D\openTK3D\obj\Debug\openTK3D.Form1.resources
+D:\OpenTK\openTK3D\openTK3D\obj\Debug\openTK3D.Properties.Resources.resources
+D:\OpenTK\openTK3D\openTK3D\obj\Debug\openTK3D.csproj.GenerateResource.Cache
+D:\OpenTK\openTK3D\openTK3D\obj\Debug\openTK3D.exe
+D:\OpenTK\openTK3D\openTK3D\obj\Debug\openTK3D.pdb
+D:\OpenTK\openTK3D\openTK3D\obj\Debug\openTK3D.csprojResolveAssemblyReference.cache
+C:\Users\Gabriel Alan\Desktop\InicialCasa\openTK3D\openTK3D\bin\Debug\openTK3D.exe.config
+C:\Users\Gabriel Alan\Desktop\InicialCasa\openTK3D\openTK3D\bin\Debug\openTK3D.exe
+C:\Users\Gabriel Alan\Desktop\InicialCasa\openTK3D\openTK3D\bin\Debug\openTK3D.pdb
+C:\Users\Gabriel Alan\Desktop\InicialCasa\openTK3D\openTK3D\bin\Debug\OpenTK.dll
+C:\Users\Gabriel Alan\Desktop\InicialCasa\openTK3D\openTK3D\bin\Debug\OpenTK.GLControl.dll
+C:\Users\Gabriel Alan\Desktop\InicialCasa\openTK3D\openTK3D\bin\Debug\OpenTK.pdb
+C:\Users\Gabriel Alan\Desktop\InicialCasa\openTK3D\openTK3D\bin\Debug\OpenTK.xml
+C:\Users\Gabriel Alan\Desktop\InicialCasa\openTK3D\openTK3D\bin\Debug\OpenTK.dll.config
+C:\Users\Gabriel Alan\Desktop\InicialCasa\openTK3D\openTK3D\bin\Debug\OpenTK.GLControl.xml
+C:\Users\Gabriel Alan\Desktop\InicialCasa\openTK3D\openTK3D\obj\Debug\openTK3D.csprojResolveAssemblyReference.cache
+C:\Users\Gabriel Alan\Desktop\InicialCasa\openTK3D\openTK3D\obj\Debug\openTK3D.Form1.resources
+C:\Users\Gabriel Alan\Desktop\InicialCasa\openTK3D\openTK3D\obj\Debug\openTK3D.Properties.Resources.resources
+C:\Users\Gabriel Alan\Desktop\InicialCasa\openTK3D\openTK3D\obj\Debug\openTK3D.csproj.GenerateResource.Cache
+C:\Users\Gabriel Alan\Desktop\InicialCasa\openTK3D\openTK3D\obj\Debug\openTK3D.exe
+C:\Users\Gabriel Alan\Desktop\InicialCasa\openTK3D\openTK3D\obj\Debug\openTK3D.pdb
+C:\Users\Gabriel Alan\Documents\OpenGLcasa\openTK3D\bin\Debug\openTK3D.exe.config
+C:\Users\Gabriel Alan\Documents\OpenGLcasa\openTK3D\bin\Debug\openTK3D.exe
+C:\Users\Gabriel Alan\Documents\OpenGLcasa\openTK3D\bin\Debug\openTK3D.pdb
+C:\Users\Gabriel Alan\Documents\OpenGLcasa\openTK3D\bin\Debug\OpenTK.dll
+C:\Users\Gabriel Alan\Documents\OpenGLcasa\openTK3D\bin\Debug\OpenTK.GLControl.dll
+C:\Users\Gabriel Alan\Documents\OpenGLcasa\openTK3D\bin\Debug\OpenTK.pdb
+C:\Users\Gabriel Alan\Documents\OpenGLcasa\openTK3D\bin\Debug\OpenTK.xml
+C:\Users\Gabriel Alan\Documents\OpenGLcasa\openTK3D\bin\Debug\OpenTK.dll.config
+C:\Users\Gabriel Alan\Documents\OpenGLcasa\openTK3D\bin\Debug\OpenTK.GLControl.xml
+C:\Users\Gabriel Alan\Documents\OpenGLcasa\openTK3D\obj\Debug\openTK3D.csprojResolveAssemblyReference.cache
+C:\Users\Gabriel Alan\Documents\OpenGLcasa\openTK3D\obj\Debug\openTK3D.Form1.resources
+C:\Users\Gabriel Alan\Documents\OpenGLcasa\openTK3D\obj\Debug\openTK3D.Properties.Resources.resources
+C:\Users\Gabriel Alan\Documents\OpenGLcasa\openTK3D\obj\Debug\openTK3D.csproj.GenerateResource.Cache
+C:\Users\Gabriel Alan\Documents\OpenGLcasa\openTK3D\obj\Debug\openTK3D.exe
+C:\Users\Gabriel Alan\Documents\OpenGLcasa\openTK3D\obj\Debug\openTK3D.pdb
+C:\Users\Gabriel Alan\Documents\homeOpenGL-master\openTK3D\bin\Debug\openTK3D.exe.config
+C:\Users\Gabriel Alan\Documents\homeOpenGL-master\openTK3D\bin\Debug\openTK3D.exe
+C:\Users\Gabriel Alan\Documents\homeOpenGL-master\openTK3D\bin\Debug\openTK3D.pdb
+C:\Users\Gabriel Alan\Documents\homeOpenGL-master\openTK3D\bin\Debug\OpenTK.dll
+C:\Users\Gabriel Alan\Documents\homeOpenGL-master\openTK3D\bin\Debug\OpenTK.GLControl.dll
+C:\Users\Gabriel Alan\Documents\homeOpenGL-master\openTK3D\bin\Debug\OpenTK.pdb
+C:\Users\Gabriel Alan\Documents\homeOpenGL-master\openTK3D\bin\Debug\OpenTK.xml
+C:\Users\Gabriel Alan\Documents\homeOpenGL-master\openTK3D\bin\Debug\OpenTK.dll.config
+C:\Users\Gabriel Alan\Documents\homeOpenGL-master\openTK3D\bin\Debug\OpenTK.GLControl.xml
+C:\Users\Gabriel Alan\Documents\homeOpenGL-master\openTK3D\obj\Debug\openTK3D.csprojResolveAssemblyReference.cache
+C:\Users\Gabriel Alan\Documents\homeOpenGL-master\openTK3D\obj\Debug\openTK3D.Form1.resources
+C:\Users\Gabriel Alan\Documents\homeOpenGL-master\openTK3D\obj\Debug\openTK3D.Properties.Resources.resources
+C:\Users\Gabriel Alan\Documents\homeOpenGL-master\openTK3D\obj\Debug\openTK3D.csproj.GenerateResource.Cache
+C:\Users\Gabriel Alan\Documents\homeOpenGL-master\openTK3D\obj\Debug\openTK3D.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel Alan\Documents\homeOpenGL-master\openTK3D\obj\Debug\openTK3D.exe
+C:\Users\Gabriel Alan\Documents\homeOpenGL-master\openTK3D\obj\Debug\openTK3D.pdb
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\bin\Debug\openTK3D.exe.config
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\bin\Debug\openTK3D.exe
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\bin\Debug\openTK3D.pdb
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\bin\Debug\OpenTK.dll
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\bin\Debug\OpenTK.GLControl.dll
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\bin\Debug\OpenTK.pdb
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\bin\Debug\OpenTK.xml
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\bin\Debug\OpenTK.dll.config
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\bin\Debug\OpenTK.GLControl.xml
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\obj\Debug\openTK3D.csprojResolveAssemblyReference.cache
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\obj\Debug\openTK3D.Form1.resources
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\obj\Debug\openTK3D.Properties.Resources.resources
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\obj\Debug\openTK3D.csproj.GenerateResource.Cache
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\obj\Debug\openTK3D.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\obj\Debug\openTK3D.exe
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\obj\Debug\openTK3D.pdb
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\bin\Debug\Texturas\portao.jpg
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\bin\Debug\App.config
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\bin\Debug\Texturas\paredehd.jpg
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\bin\Debug\Texturas\porta.jpg
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\bin\Debug\Texturas\texturaparedeI.jpg
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\bin\Debug\Texturas\assoalho.jpg
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\bin\Debug\Texturas\piso.jpg
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\bin\Debug\Texturas\marmore.jpg
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\bin\Debug\Texturas\cozinhapiso.jpg
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\bin\Debug\Texturas\paredemarrom.jpg
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\bin\Debug\Texturas\pisoarmazem.jpg
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\bin\Debug\Texturas\portaexterior.jpg
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\bin\Debug\Texturas\janela.jpg
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\bin\Debug\Texturas\janelabanheiro.jpg
+C:\Users\Gabriel Alan\Documents\GitHub\homeOpenGL\openTK3D\bin\Debug\Texturas\telhas.jpg
+C:\Users\gente\Downloads\CepciFema\openTK3D\bin\Debug\Texturas\assoalho.jpg
+C:\Users\gente\Downloads\CepciFema\openTK3D\bin\Debug\Texturas\cozinhapiso.jpg
+C:\Users\gente\Downloads\CepciFema\openTK3D\bin\Debug\Texturas\janela.jpg
+C:\Users\gente\Downloads\CepciFema\openTK3D\bin\Debug\Texturas\janelabanheiro.jpg
+C:\Users\gente\Downloads\CepciFema\openTK3D\bin\Debug\Texturas\marmore.jpg
+C:\Users\gente\Downloads\CepciFema\openTK3D\bin\Debug\Texturas\paredehd.jpg
+C:\Users\gente\Downloads\CepciFema\openTK3D\bin\Debug\Texturas\paredemarrom.jpg
+C:\Users\gente\Downloads\CepciFema\openTK3D\bin\Debug\Texturas\piso.jpg
+C:\Users\gente\Downloads\CepciFema\openTK3D\bin\Debug\Texturas\pisoarmazem.jpg
+C:\Users\gente\Downloads\CepciFema\openTK3D\bin\Debug\Texturas\porta.jpg
+C:\Users\gente\Downloads\CepciFema\openTK3D\bin\Debug\Texturas\portaexterior.jpg
+C:\Users\gente\Downloads\CepciFema\openTK3D\bin\Debug\Texturas\portao.jpg
+C:\Users\gente\Downloads\CepciFema\openTK3D\bin\Debug\Texturas\telhas.jpg
+C:\Users\gente\Downloads\CepciFema\openTK3D\bin\Debug\Texturas\texturaparedeI.jpg
+C:\Users\gente\Downloads\CepciFema\openTK3D\bin\Debug\App.config
+C:\Users\gente\Downloads\CepciFema\openTK3D\bin\Debug\openTK3D.exe.config
+C:\Users\gente\Downloads\CepciFema\openTK3D\bin\Debug\openTK3D.exe
+C:\Users\gente\Downloads\CepciFema\openTK3D\bin\Debug\openTK3D.pdb
+C:\Users\gente\Downloads\CepciFema\openTK3D\bin\Debug\OpenTK.dll
+C:\Users\gente\Downloads\CepciFema\openTK3D\bin\Debug\OpenTK.GLControl.dll
+C:\Users\gente\Downloads\CepciFema\openTK3D\bin\Debug\OpenTK.pdb
+C:\Users\gente\Downloads\CepciFema\openTK3D\bin\Debug\OpenTK.xml
+C:\Users\gente\Downloads\CepciFema\openTK3D\bin\Debug\OpenTK.dll.config
+C:\Users\gente\Downloads\CepciFema\openTK3D\bin\Debug\OpenTK.GLControl.xml
+C:\Users\gente\Downloads\CepciFema\openTK3D\obj\Debug\openTK3D.csprojAssemblyReference.cache
+C:\Users\gente\Downloads\CepciFema\openTK3D\obj\Debug\openTK3D.Form1.resources
+C:\Users\gente\Downloads\CepciFema\openTK3D\obj\Debug\openTK3D.Properties.Resources.resources
+C:\Users\gente\Downloads\CepciFema\openTK3D\obj\Debug\openTK3D.csproj.GenerateResource.cache
+C:\Users\gente\Downloads\CepciFema\openTK3D\obj\Debug\openTK3D.csproj.CoreCompileInputs.cache
+C:\Users\gente\Downloads\CepciFema\openTK3D\obj\Debug\openTK3D.csproj.CopyComplete
+C:\Users\gente\Downloads\CepciFema\openTK3D\obj\Debug\openTK3D.exe
+C:\Users\gente\Downloads\CepciFema\openTK3D\obj\Debug\openTK3D.pdb
