@@ -17,7 +17,8 @@ namespace openTK3D
     {
         Auxiliar estruturar = new Auxiliar();
         int lateral = 0, lateral2 = 0;
-        int size_muro = 100;
+        int size_muro = 120;
+        int size_muro_maior = 140;
         Vector3d dir = new Vector3d(0, -450, 120);        //dire��o da c�mera
         Vector3d pos = new Vector3d(0, -550, 120);     //posi��o da c�mera
         float camera_rotation = 0;                     //rotação no eixo Z
@@ -37,6 +38,7 @@ namespace openTK3D
         public int janela;
         public int janela_banheiro;
         public int telhas;
+        public int grama;
 
         public Form1()
         {
@@ -109,6 +111,7 @@ namespace openTK3D
             janela = LoadTexture("Texturas/janela.jpg");
             janela_banheiro = LoadTexture("Texturas/janelabanheiro.jpg");
             telhas = LoadTexture("Texturas/telhas.jpg");
+            grama = LoadTexture("Texturas/grama.jpg");
             GL.MatrixMode(MatrixMode.Projection);
             GL.LoadMatrix(ref projection);
 
@@ -183,17 +186,21 @@ namespace openTK3D
             float a = camera_rotation;
             int tipoTecla = 0;
             int sinal = 1;
-
+            if (e.KeyCode == Keys.Space)
+            {
+                pos.Z += 10;
+                glControl1.Invalidate();
+            }
             if (e.KeyCode == Keys.Q)
             {
                 valor += 10;
-                pos.Z += 100;
+                pos.Z += 10;
                 glControl1.Invalidate();
             }
             if (e.KeyCode == Keys.E)
             {
                 valor -= 10;
-                pos.Z -= 100;
+                pos.Z -= 10;
                 glControl1.Invalidate();
             }
             if (e.KeyCode == Keys.A)
@@ -278,26 +285,30 @@ namespace openTK3D
 
         private void casaDraw()
         {
-            /*PAREDES EXTERIORES
-          //
-            */
+
             int espessura = 10;
             //PORTA
-            estruturar.desenhaparedex(810, 295, 0, 80, size_muro, espessura, Color.White, porta, 1);
-            estruturar.desenhaparedex(810, 1305, 50, 80, 30, espessura, Color.White, janela, 1);
+            estruturar.desenhaparedey(1202, 620, 0, 50, size_muro, espessura, Color.White, porta, 1);
+            estruturar.desenhaparedey(498, 620, 0, 50, size_muro, espessura, Color.White, porta, 1);
+            estruturar.desenhaparedex(770, 1002, 0, 160, 80, espessura, Color.White, portao, 1);
 
             //JANELA
-
+            estruturar.desenhaparedex(810, 1305, 50, 80, 30, espessura, Color.White, janela, 1);
 
             //CHAO
             estruturar.horizontal(0, 0, 0, 3500, 3500, Color.DarkGray);
-            estruturar.horizontal(805, 0, 1, 90, 350, Color.Gray);
+            estruturar.desenhaparedex(1205, 605, 0, 350, 5, 80, Color.White, piso_armazem, 5);
+            estruturar.desenhaparedex(100, 430, 0, 400, 2, 430, Color.White, piso, 5);
+
+            //TELHADO
+            estruturar.desenhaparedex(90, 420, size_muro, 300, espessura, 400, Color.White, telhas, 2);
+            estruturar.desenhaparedex(390, 605, size_muro, 110, espessura, 80, Color.White, telhas, 2);
 
             //paredes BLOCO CETRAL
-            estruturar.desenhaparedex(700, 1000, 0, 300, size_muro, espessura, Color.White, textura_parede, 1);
-            estruturar.desenhaparedex(700, 300, 0, 300, size_muro, espessura, Color.White, textura_parede, 1);
-            estruturar.desenhaparedey(500, 500, 0, 300, size_muro, espessura, Color.White, textura_parede, 1);
-            estruturar.desenhaparedey(1200, 500, 0, 300, size_muro, espessura, Color.White, textura_parede, 1);
+            estruturar.desenhaparedex(700, 1000, 0, 300, size_muro_maior, espessura, Color.White, textura_parede, 1);
+            estruturar.desenhaparedex(700, 300, 0, 300, size_muro_maior, espessura, Color.White, textura_parede, 1);
+            estruturar.desenhaparedey(500, 500, 0, 300, size_muro_maior, espessura, Color.White, textura_parede, 1);
+            estruturar.desenhaparedey(1200, 500, 0, 300, size_muro_maior, espessura, Color.White, textura_parede, 1);
 
             //Paredes BLOCO DA DIREIRA
             estruturar.desenhaparedex(725, 1300, 0, 250, size_muro, espessura, Color.White, textura_parede, 1);
@@ -308,91 +319,462 @@ namespace openTK3D
             estruturar.desenhaparedey(100, 430, 0, 430, size_muro, espessura, Color.White, textura_parede, 1);
             estruturar.desenhaparedex(100, 430, 0, 400, size_muro, espessura, Color.White, textura_parede, 1);
             estruturar.desenhaparedex(100, 860, 0, 400, size_muro, espessura, Color.White, textura_parede, 1);
-            //DIAGONAIS DIREITA
-            GL.Enable(EnableCap.Texture2D);
-            GL.BindTexture(TextureTarget.Texture2D, textura_parede);
-            GL.Color3(Color.Transparent);
-            GL.Begin(PrimitiveType.Polygon);
-            GL.Vertex3(700, 1000, 100);
-            GL.Vertex3(700, 1000, 0);
-            GL.Vertex3(500, 800, 0);
-            GL.Vertex3(500, 800, 100);
-            GL.End();
 
-            GL.Enable(EnableCap.Texture2D);
-            GL.BindTexture(TextureTarget.Texture2D, textura_parede);
-            GL.Color3(Color.Transparent);
-            GL.Begin(PrimitiveType.Polygon);
-            GL.Vertex3(1000, 1000, 100);
-            GL.Vertex3(1000, 1000, 0);
-            GL.Vertex3(1200, 800, 0);
-            GL.Vertex3(1200, 800, 100);
-            GL.End();
+            //DIAGONAIS
+            {
 
+                //DIAGONAIS CENTRAL
+                GL.Enable(EnableCap.Texture2D);
+                GL.BindTexture(TextureTarget.Texture2D, textura_parede);
+                GL.Color3(Color.Transparent);
+                GL.Begin(PrimitiveType.Quads);
+                GL.Vertex3(700, 300, size_muro_maior);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(700, 300, 0);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(500, 500, 0);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(500, 500, size_muro_maior);
+                GL.TexCoord2(0, 0);
+                GL.End();
+                GL.Begin(PrimitiveType.Quads);
+                GL.Vertex3(700 + espessura, 300, size_muro_maior);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(700 + espessura, 300, 0);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(500, 500 + espessura, 0);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(500, 500 + espessura, size_muro_maior);
+                GL.TexCoord2(0, 0);
+                GL.End();
 
-            //DIAGONAIS CENTRAL
-            GL.Enable(EnableCap.Texture2D);
-            GL.BindTexture(TextureTarget.Texture2D, textura_parede);
-            GL.Color3(Color.Transparent);
-            GL.Begin(PrimitiveType.Polygon);
-            GL.Vertex3(700, 300, 100);
-            GL.Vertex3(700, 300, 0);
-            GL.Vertex3(500, 500, 0);
-            GL.Vertex3(500, 500, 100);
-            GL.End();
+                GL.Enable(EnableCap.Texture2D);
+                GL.BindTexture(TextureTarget.Texture2D, textura_parede);
+                GL.Color3(Color.Transparent);
+                GL.Begin(PrimitiveType.Quads);
+                GL.Vertex3(1000, 300, size_muro_maior);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(1000, 300, 0);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(1200 + espessura, 500, 0);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(1200 + espessura, 500, size_muro_maior);
+                GL.TexCoord2(0, 0);
+                GL.End();
+                GL.Begin(PrimitiveType.Quads);
+                GL.Vertex3(1000, 300 + espessura, size_muro_maior);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(1000, 300 + espessura, 0);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(1200, 500, 0);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(1200, 500, size_muro_maior);
+                GL.TexCoord2(0, 0);
+                GL.End();
 
-            GL.Enable(EnableCap.Texture2D);
-            GL.BindTexture(TextureTarget.Texture2D, textura_parede);
-            GL.Color3(Color.Transparent);
-            GL.Begin(PrimitiveType.Polygon);
-            GL.Vertex3(1000, 300, 100);
-            GL.Vertex3(1000, 300, 0);
-            GL.Vertex3(1200, 500, 0);
-            GL.Vertex3(1200, 500, 100);
-            GL.End();
+                GL.Enable(EnableCap.Texture2D);
+                GL.BindTexture(TextureTarget.Texture2D, textura_parede);
+                GL.Color3(Color.Transparent);
+                GL.Begin(PrimitiveType.Quads);
+                GL.Vertex3(700, 1000 + espessura, size_muro_maior);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(700, 1000 + espessura, 0);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(500, 800, 0);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(500, 800, size_muro_maior);
+                GL.TexCoord2(0, 0);
+                GL.End();
+                GL.Begin(PrimitiveType.Quads);
+                GL.Vertex3(700, 1000, size_muro_maior);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(700, 1000, 0);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(500 + espessura, 800, 0);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(500 + espessura, 800, size_muro_maior);
+                GL.TexCoord2(0, 0);
+                GL.End();
 
-            GL.Enable(EnableCap.Texture2D);
-            GL.BindTexture(TextureTarget.Texture2D, textura_parede);
-            GL.Color3(Color.Transparent);
-            GL.Begin(PrimitiveType.Polygon);
-            GL.Vertex3(700, 1000, 100);
-            GL.Vertex3(700, 1000, 0);
-            GL.Vertex3(500, 800, 0);
-            GL.Vertex3(500, 800, 100);
-            GL.End();
+                GL.Enable(EnableCap.Texture2D);
+                GL.BindTexture(TextureTarget.Texture2D, textura_parede);
+                GL.Color3(Color.Transparent);
+                GL.Begin(PrimitiveType.Quads);
+                GL.Vertex3(1000, 1000, size_muro_maior);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(1000, 1000, 0);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(1200, 800, 0);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(1200, 800, size_muro_maior);
+                GL.TexCoord2(0, 0);
+                GL.End();
+                GL.Begin(PrimitiveType.Quads);
+                GL.Vertex3(1000, 1000 + espessura, size_muro_maior);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(1000, 1000 + espessura, 0);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(1200 + espessura, 800, 0);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(1200 + espessura, 800, size_muro_maior);
+                GL.TexCoord2(0, 0);
+                GL.End();
 
-            GL.Enable(EnableCap.Texture2D);
-            GL.BindTexture(TextureTarget.Texture2D, textura_parede);
-            GL.Color3(Color.Transparent);
-            GL.Begin(PrimitiveType.Polygon);
-            GL.Vertex3(1000, 1000, 100);
-            GL.Vertex3(1000, 1000, 0);
-            GL.Vertex3(1200, 800, 0);
-            GL.Vertex3(1200, 800, 100);
-            GL.End();
+                //DIAGONAIS BLOCOS DE TRAS
 
-            //DIAGONAIS BLOCOS DE TRAS
+                GL.Enable(EnableCap.Texture2D);
+                GL.BindTexture(TextureTarget.Texture2D, textura_parede);
+                GL.Color3(Color.Transparent);
+                GL.Begin(PrimitiveType.Quads);
+                GL.Vertex3(725, 1300, size_muro);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(725, 1300, 0);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(600 + espessura, 1150, 0);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(600 + espessura, 1150, size_muro);
+                GL.TexCoord2(0, 0);
+                GL.End();
+                GL.Begin(PrimitiveType.Quads);
+                GL.Vertex3(725, 1300 + espessura, size_muro);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(725, 1300 + espessura, 0);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(600, 1150, 0);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(600, 1150, size_muro);
+                GL.TexCoord2(0, 0);
+                GL.End();
 
-            GL.Enable(EnableCap.Texture2D);
-            GL.BindTexture(TextureTarget.Texture2D, textura_parede);
-            GL.Color3(Color.Transparent);
-            GL.Begin(PrimitiveType.Polygon);
-            GL.Vertex3(725, 1300, 100);
-            GL.Vertex3(725, 1300, 0);
-            GL.Vertex3(600, 1150, 0);
-            GL.Vertex3(600, 1150, 100);
-            GL.End();
+                GL.Enable(EnableCap.Texture2D);
+                GL.BindTexture(TextureTarget.Texture2D, textura_parede);
+                GL.Color3(Color.Transparent);
+                GL.Begin(PrimitiveType.Quads);
+                GL.Vertex3(975, 1300, size_muro);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(975, 1300, 0);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(1100, 1150, 0);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(1100, 1150, size_muro);
+                GL.TexCoord2(0, 0);
+                GL.End();
+                GL.Begin(PrimitiveType.Quads);
+                GL.Vertex3(975, 1300 + espessura, size_muro);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(975, 1300 + espessura, 0);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(1100 + espessura, 1150, 0);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(1100 + espessura, 1150, size_muro);
+                GL.TexCoord2(0, 0);
+                GL.End();
 
-            GL.Enable(EnableCap.Texture2D);
-            GL.BindTexture(TextureTarget.Texture2D, textura_parede);
-            GL.Color3(Color.Transparent);
-            GL.Begin(PrimitiveType.Polygon);
-            GL.Vertex3(975, 1300, 100);
-            GL.Vertex3(975, 1300, 0);
-            GL.Vertex3(1100, 1150, 0);
-            GL.Vertex3(1100, 1150, 100);
-            GL.End();
+                //DIAGONAIS EXTRA
 
+                GL.Enable(EnableCap.Texture2D);
+                GL.BindTexture(TextureTarget.Texture2D, textura_parede);
+                GL.Color3(Color.Transparent);
+                GL.Begin(PrimitiveType.Quads);
+                GL.Vertex3(500, 440, size_muro);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(535, 475, size_muro);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(535, 475, 0);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(500, 440, 0);
+                GL.TexCoord2(0, 0);
+                GL.End();
+                GL.Begin(PrimitiveType.Quads);
+                GL.Vertex3(500, 430, size_muro);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(535, 465, size_muro);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(535, 465, 0);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(500, 430, 0);
+                GL.TexCoord2(0, 0);
+                GL.End();
+
+                GL.Enable(EnableCap.Texture2D);
+                GL.BindTexture(TextureTarget.Texture2D, textura_parede);
+                GL.Color3(Color.Transparent);
+                GL.Begin(PrimitiveType.Quads);
+                GL.Vertex3(535, 835, size_muro);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(500, 870, size_muro);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(500, 870, 0);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(535, 835, 0);
+                GL.TexCoord2(0, 0);
+                GL.End();
+                GL.Begin(PrimitiveType.Quads);
+                GL.Vertex3(535, 825, size_muro);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(500, 860, size_muro);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(500, 860, 0);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(535, 825, 0);
+                GL.TexCoord2(0, 0);
+                GL.End();
+            }
+            
+            //TELHADO MAIOR
+            {
+                Vector2 q1 = new Vector2(690, 1020);
+                Vector2 q2 = new Vector2(1010, 1020);
+                Vector2 q3 = new Vector2(1220, 810);
+                Vector2 q4 = new Vector2(1220, 490);
+                Vector2 q5 = new Vector2(1010, 290);
+                Vector2 q6 = new Vector2(690, 290);
+                Vector2 q7 = new Vector2(490, 490);
+                Vector2 q8 = new Vector2(490, 810);
+                int telhado = size_muro_maior + espessura;
+
+                //INTERNO
+                GL.Enable(EnableCap.Texture2D);
+                GL.BindTexture(TextureTarget.Texture2D, telhas);
+                GL.Color3(Color.Transparent);
+                GL.Begin(PrimitiveType.Polygon);
+                GL.Vertex3(855, 655, size_muro_maior);
+                GL.TexCoord2(1, 1);
+
+                GL.Vertex3(q1.X, q1.Y, size_muro_maior);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(q2.X, q2.Y, size_muro_maior);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(q3.X, q3.Y, size_muro_maior);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(q4.X, q4.Y, size_muro_maior);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(q5.X, q5.Y, size_muro_maior);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(q6.X, q6.Y, size_muro_maior);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(q7.X, q7.Y, size_muro_maior);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(q8.X, q8.Y, size_muro_maior);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(q1.X, q1.Y, size_muro_maior);
+                GL.TexCoord2(0, 1);
+                GL.End();
+
+                //EXTERNO
+                GL.Enable(EnableCap.Texture2D);
+                GL.BindTexture(TextureTarget.Texture2D, telhas);
+                GL.Color3(Color.Transparent);
+                GL.Begin(PrimitiveType.Polygon);
+                GL.Vertex3(855, 655, telhado);
+                GL.TexCoord2(1, 1);
+
+                GL.Vertex3(q1.X, q1.Y, telhado);
+                GL.TexCoord2(0, 0);
+                GL.Vertex3(q2.X, q2.Y, telhado);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(q3.X, q3.Y, telhado);
+                GL.TexCoord2(0, 0);
+                GL.Vertex3(q4.X, q4.Y, telhado);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(q5.X, q5.Y, telhado);
+                GL.TexCoord2(0, 0);
+                GL.Vertex3(q6.X, q6.Y, telhado);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(q7.X, q7.Y, telhado);
+                GL.TexCoord2(0, 0);
+                GL.Vertex3(q8.X, q8.Y, telhado);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(q1.X, q1.Y, telhado);
+                GL.TexCoord2(0, 0);
+                GL.End();
+
+                //BORDAS
+                GL.Enable(EnableCap.Texture2D);
+                GL.BindTexture(TextureTarget.Texture2D, telhas);
+                GL.Color3(Color.Transparent);
+                GL.Begin(PrimitiveType.Quads);
+                GL.Vertex3(q1.X, q1.Y, size_muro_maior);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(q1.X, q1.Y, telhado);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(q2.X, q2.Y, telhado);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(q2.X, q2.Y, size_muro_maior);
+                GL.TexCoord2(0, 0);
+                GL.End();
+
+                GL.Begin(PrimitiveType.Quads);
+                GL.Vertex3(q2.X, q2.Y, size_muro_maior);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(q2.X, q2.Y, telhado);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(q3.X, q3.Y, telhado);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(q3.X, q3.Y, size_muro_maior);
+                GL.TexCoord2(0, 0);
+                GL.End();
+
+                GL.Begin(PrimitiveType.Quads);
+                GL.Vertex3(q3.X, q3.Y, size_muro_maior);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(q3.X, q3.Y, telhado);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(q4.X, q4.Y, telhado);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(q4.X, q4.Y, size_muro_maior);
+                GL.TexCoord2(0, 0);
+                GL.End();
+
+                GL.Begin(PrimitiveType.Quads);
+                GL.Vertex3(q4.X, q4.Y, size_muro_maior);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(q4.X, q4.Y, telhado);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(q5.X, q5.Y, telhado);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(q5.X, q5.Y, size_muro_maior);
+                GL.TexCoord2(0, 0);
+                GL.End();
+
+                GL.Begin(PrimitiveType.Quads);
+                GL.Vertex3(q5.X, q5.Y, size_muro_maior);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(q5.X, q5.Y, telhado);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(q6.X, q6.Y, telhado);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(q6.X, q6.Y, size_muro_maior);
+                GL.TexCoord2(0, 0);
+                GL.End();
+
+                GL.Begin(PrimitiveType.Quads);
+                GL.Vertex3(q6.X, q6.Y, size_muro_maior);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(q6.X, q6.Y, telhado);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(q7.X, q7.Y, telhado);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(q7.X, q7.Y, size_muro_maior);
+                GL.TexCoord2(0, 0);
+                GL.End();
+
+                GL.Begin(PrimitiveType.Quads);
+                GL.Vertex3(q7.X, q7.Y, size_muro_maior);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(q7.X, q7.Y, telhado);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(q8.X, q8.Y, telhado);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(q8.X, q8.Y, size_muro_maior);
+                GL.TexCoord2(0, 0);
+                GL.End();
+
+                GL.Begin(PrimitiveType.Quads);
+                GL.Vertex3(q8.X, q8.Y, size_muro_maior);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(q8.X, q8.Y, telhado);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(q1.X, q1.Y, telhado);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(q1.X, q1.Y, size_muro_maior);
+                GL.TexCoord2(0, 0);
+                GL.End();
+            }
+
+            //PISO
+            {
+                Vector2 q1 = new Vector2(700, 1010);
+                Vector2 q2 = new Vector2(1000, 1010);
+                Vector2 q3 = new Vector2(1210, 800);
+                Vector2 q4 = new Vector2(1210, 500);
+                Vector2 q5 = new Vector2(1000, 300);
+                Vector2 q6 = new Vector2(700, 300);
+                Vector2 q7 = new Vector2(500, 500);
+                Vector2 q8 = new Vector2(500, 800);
+
+                Vector2 w1 = new Vector2(725, 1300);
+                Vector2 w2 = new Vector2(975, 1300);
+                Vector2 w3 = new Vector2(1100, 1150);
+                Vector2 w4 = new Vector2(1100, 900);
+                Vector2 w5 = new Vector2(600, 900);
+                Vector2 w6 = new Vector2(600, 1150);
+
+                Vector2 e1 = new Vector2(500, 860);
+                Vector2 e2 = new Vector2(535, 825);
+                Vector2 e3 = new Vector2(535, 465);
+                Vector2 e4 = new Vector2(500, 430);
+
+                int size_piso_centro = 3;
+                int size_piso_direita = 2;
+                int size_piso_fundo = 1;
+
+                //INTERNO
+                GL.Enable(EnableCap.Texture2D);
+                GL.BindTexture(TextureTarget.Texture2D, marmore);
+                GL.Color3(Color.Transparent);
+                GL.Begin(PrimitiveType.Polygon);
+                GL.Vertex3(855, 655, size_piso_centro);
+                GL.TexCoord2(1, 1);
+
+                GL.Vertex3(q1.X, q1.Y, size_piso_centro);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(q2.X, q2.Y, size_piso_centro);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(q3.X, q3.Y, size_piso_centro);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(q4.X, q4.Y, size_piso_centro);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(q5.X, q5.Y, size_piso_centro);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(q6.X, q6.Y, size_piso_centro);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(q7.X, q7.Y, size_piso_centro);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(q8.X, q8.Y, size_piso_centro);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(q1.X, q1.Y, size_piso_centro);
+                GL.TexCoord2(0, 1);
+                GL.End();
+
+                GL.Enable(EnableCap.Texture2D);
+                GL.BindTexture(TextureTarget.Texture2D, grama);
+                GL.Color3(Color.Transparent);
+                GL.Begin(PrimitiveType.Polygon);
+                GL.Vertex3(850, 1100, size_piso_direita);
+                GL.TexCoord2(1, 1);
+
+                GL.Vertex3(w1.X, w1.Y, size_piso_direita);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(w2.X, w2.Y, size_piso_direita);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(w3.X, w3.Y, size_piso_direita);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(w4.X, w4.Y, size_piso_direita);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(w5.X, w5.Y, size_piso_direita);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(w6.X, w6.Y, size_piso_direita);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(w1.X, w1.Y, size_piso_direita);
+                GL.TexCoord2(1, 0);
+                GL.End();
+
+                GL.Enable(EnableCap.Texture2D);
+                GL.BindTexture(TextureTarget.Texture2D, piso);
+                GL.Color3(Color.Transparent);
+                GL.Begin(PrimitiveType.Quads);
+                GL.Begin(PrimitiveType.Quads);
+                GL.Vertex3(e1.X, e1.Y, size_piso_fundo);
+                GL.TexCoord2(1, 0);
+                GL.Vertex3(e2.X, e2.Y, size_piso_fundo);
+                GL.TexCoord2(1, 1);
+                GL.Vertex3(e3.X, e3.Y, size_piso_fundo);
+                GL.TexCoord2(0, 1);
+                GL.Vertex3(e4.X, e4.Y, size_piso_fundo);
+                GL.TexCoord2(0, 0);
+                GL.End();
+            }
         }
     }
 }
